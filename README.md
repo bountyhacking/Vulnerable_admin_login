@@ -1,45 +1,8 @@
 # Vulnerable admin login Page
 El código proporcionado es un ejemplo básico de una página web con un formulario de inicio de sesión. La funcionalidad principal del código es permitir que los usuarios ingresen un nombre de usuario y una contraseña para iniciar sesión. Si se ingresan las credenciales correctas ("admin" como nombre de usuario y "admin" como contraseña), el usuario es redirigido a una página de bienvenida.
 
-```
-<!-- Aqui se declararn las variables y se crea la seccion para el login de usuario -->
+![image](https://github.com/bountyhacking/Vulnerable_admin_login/assets/103284308/b8b73217-6d5d-45ea-8d90-1e7bd8eefed4)
 
-<body>
-  <div class="container">
-    <h2>Login</h2>
-    <form id="login-form">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" class="form-control" required>
-      </div>
-      <button type="submit" class="btn-login">Login</button>
-    </form>
-    <div id="message" class="message"></div>
-  </div>
-
-<!-- Aqui termina la declaracion de las variables -->
-
-<!-- Aqui comienza el script para iniciar sesion como usuario -->
-  <script>
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      var username = document.getElementById('username').value;
-      var password = document.getElementById('password').value;
-
-      if (username === 'admin' && password === 'admin') { // Username y password genericos que se encuentran almacenados en el frontend
-        window.location.href = 'admin.html';
-      } else {
-        document.getElementById('message').textContent = 'Invalid username or password';
-      }
-    });
-  </script>
-<!-- Aqui terminal script para iniciar sesion -->
-```
 
 Sin embargo, este código presenta algunas vulnerabilidades y malas prácticas de seguridad que se deben tener en cuenta:
 
