@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+
+<!--Estos bloques son para darle estilo al aplicativo web-->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+    }
+
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      margin-top: 200px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .btn-login {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<!--Aqui terminan los bloques de estilo-->
+
+<!-- Aqui se declararn las variables y se crea la seccion para el login de usuario -->
+
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" required>
+      </div>
+      <button type="submit" class="btn-login">Login</button>
+    </form>
+    <div id="message" class="message"></div>
+  </div>
+
+<!-- Aqui termina la declaracion de las variables -->
+
+<!-- Aqui comienza el script para iniciar sesion como usuario -->
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      if (username === 'admin' && password === 'admin') { // Username y password genericos que se encuentran almacenados en el frontend
+        window.location.href = 'admin.html';
+      } else {
+        document.getElementById('message').textContent = 'Invalid username or password';
+      }
+    });
+  </script>
+<!-- Aqui terminal script para iniciar sesion -->
+</body>
+</html>
